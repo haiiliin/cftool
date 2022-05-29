@@ -143,7 +143,7 @@ class Ui_MainWindow(object):
         self.type.setItemText(0, _translate("MainWindow", "Custom"))
         self.type.setItemText(1, _translate("MainWindow", "Polynomial"))
         self.type.setItemText(2, _translate("MainWindow", "Ellipse"))
-        self.equation.setText(_translate("MainWindow", "x + y - 1 = a * (x - y - 1) * (x - y + 1)"))
+        self.equation.setText(_translate("MainWindow", "y = a * x^2 + b * x + c"))
         self.equation.setPlaceholderText(_translate("MainWindow", "Equation"))
         self.label.setText(_translate("MainWindow", "Initial"))
         self.initial.setPlaceholderText(_translate("MainWindow", "Initial values"))
