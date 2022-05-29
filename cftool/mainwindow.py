@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import QMainWindow, QFileDialog, QTableWidgetItem, QAction,
 from matplotlib import rcParams
 from scipy import optimize
 from scipy.optimize import Bounds
-from sympy import Basic, Expr, Add, Mul, lambdify, S, Symbol, Eq, SympifyError
+from sympy import Basic, Expr, Add, Mul, lambdify, S, Symbol, Eq
 
 from .ui_mainwindow import Ui_MainWindow
 
@@ -135,15 +135,14 @@ class MainWindow(QMainWindow):
         equation = self.ui.equation.text()
         try:
             expr = Eq(*map(S, equation.split('=')))
-        except (SyntaxError, SympifyError):
+            self.coefs = list(expr.free_symbols)
+            self.coefs.remove(Symbol('x'))
+            self.coefs.remove(Symbol('y'))
+            self.coef_initials = [1] * len(self.coefs)
+            self.f = Add(Mul(expr.args[0], -1), expr.args[1])
+            self.func = lambdify([Symbol('x'), Symbol('y')] + self.coefs, self.f)
+        except Exception:
             return
-
-        self.coefs = list(expr.free_symbols)
-        self.coefs.remove(Symbol('x'))
-        self.coefs.remove(Symbol('y'))
-        self.coef_initials = [1] * len(self.coefs)
-        self.f = Add(Mul(expr.args[0], -1), expr.args[1])
-        self.func = lambdify([Symbol('x'), Symbol('y')] + self.coefs, self.f)
 
         coef_list = ', '.join([str(coef) for coef in self.coefs])
         self.ui.initial.setPlaceholderText(f'Initial values for {coef_list}')
