@@ -3,6 +3,10 @@ A Curve Fitting Tool
 
 cftool (Curve Fitting Tool) is a program to do the curve fitting. It supports curve fitting of implicit equations. 
 
+## Screenshot
+
+![screenshot](docs/source/_static/interface.png)
+
 
 ## Downloads
 
