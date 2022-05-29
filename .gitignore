@@ -133,3 +133,4 @@ dmypy.json
 /Pipfile
 /Pipfile.lock
 /Setup.exe
+/cftool-setup.exe
