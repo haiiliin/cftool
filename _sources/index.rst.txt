@@ -8,6 +8,11 @@ Welcome to cftool's documentation!
 
 cftool (Curve Fitting Tool) is a program to do the curve fitting. It supports curve fitting of implicit equations. 
 
+Project Homepage
+----------------
+
+- GitHub: `github.com/haiiliin/cftool <https://github.com/haiiliin/cftool>`_
+
 
 Downloads
 ---------
