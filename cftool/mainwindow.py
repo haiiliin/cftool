@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
         super().__init__(parent, *args, **kwargs)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon('icons/process.png'))
+        self.setWindowIcon(QIcon('icons/curve-fitting.png'))
         self.setMinimumSize(1000, 800)
         self.setupActions()
 
