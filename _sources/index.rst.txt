@@ -17,7 +17,7 @@ Project Homepage
 Downloads
 ---------
 
-You can download the latest version of Abaqus Executor on `GitHub <https://github.com/haiiliin/cftool/releases/latest>`_.
+You can download the latest version of cftool on `GitHub <https://github.com/haiiliin/cftool/releases/latest>`_.
 
 
 Main Interface
