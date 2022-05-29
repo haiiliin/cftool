@@ -560,7 +560,6 @@ Section "MainSection" SEC01
   File "dist\cftool\pytz\zoneinfo\Africa\Nouakchott"
   File "dist\cftool\pytz\zoneinfo\Africa\Ouagadougou"
   File "dist\cftool\pytz\zoneinfo\Africa\Porto-Novo"
-  File "dist\cftool\pytz\zoneinfo\Africa\Sao_Tome"
   File "dist\cftool\pytz\zoneinfo\Africa\Timbuktu"
   File "dist\cftool\pytz\zoneinfo\Africa\Tripoli"
   File "dist\cftool\pytz\zoneinfo\Africa\Tunis"
