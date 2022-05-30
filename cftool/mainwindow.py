@@ -1,3 +1,4 @@
+import os.path
 import typing
 
 import numpy as np
@@ -57,6 +58,8 @@ class MainWindow(QMainWindow):
         self.ycols = []
         self.customEquation = self.ui.equation.text()
 
+        # self.ui.equation.setText('x + y - 1 = a * (x - y - 1) * (x - y + 1)')
+
         self.parseEquation()
 
     def setupActions(self):
@@ -108,6 +111,9 @@ class MainWindow(QMainWindow):
         documentationPath = QStandardPaths.standardLocations(QStandardPaths.DocumentsLocation)[0]
         filePath, _ = QFileDialog.getOpenFileName(self, 'Select File', documentationPath,
                                                   'Comma-Separated File (*.csv)')
+        if not os.path.exists(filePath):
+            return
+
         self.data = pd.read_csv(filePath)
         self.ui.dataTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.ui.dataTable.setRowCount(self.data.shape[0])
@@ -133,6 +139,7 @@ class MainWindow(QMainWindow):
 
     def parseEquation(self):
         equation = self.ui.equation.text()
+        # noinspection PyBroadException
         try:
             expr = Eq(*map(S, equation.split('=')))
             self.coefs = list(expr.free_symbols)
